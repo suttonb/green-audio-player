@@ -165,13 +165,13 @@ var GreenAudioPlayer = /*#__PURE__*/function () {
           var listener = self[handleMethod].bind(self);
           window.addEventListener('touchmove', listener, false);
 
-          if (self.currentlyDragged.parentElement.parentElement === self.sliders[0]) {
+          if (self.currentlyDragged.target.parentElement.parentElement === self.sliders[0]) {
             self.paused = self.player.paused;
             if (self.paused === false) self.togglePlay();
           }
 
           window.addEventListener('touchend', function () {
-            if (self.currentlyDragged !== false && self.currentlyDragged.parentElement.parentElement === self.sliders[0] && self.paused !== self.player.paused) {
+            if (self.currentlyDragged !== false && self.currentlyDragged.target.parentElement.parentElement === self.sliders[0] && self.paused !== self.player.paused) {
               self.togglePlay();
             }
 
